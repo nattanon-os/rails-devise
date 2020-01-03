@@ -17,6 +17,26 @@ class User < ApplicationRecord
     self.add_role(:newuser) if self.roles.blank?
   end
 
+  def idea?
+    has_role?(Idea)
+  end
+
+  def moderator?
+    has_role?(:moderator)
+  end 
+
+  def newuser?
+    has_role?(:newuser)
+  end
+
+  def admin?
+    has_role?(:admin)
+  end
+
+  def client?
+    has_role?(:client)
+  end
+
   # attr_writer :login
   # attr_accessor :login
 
