@@ -5,6 +5,10 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    p '//////////////////////////////'
+    p current_user.has_role? :newuser
+    p '//////////////////////////////'
+    # p user.has_role? :newuser
   end
 
   # GET /ideas/1
