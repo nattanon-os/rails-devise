@@ -6,15 +6,9 @@ class Ability
     p '*********************1'
     p user
     p '*********************2'
-    if user.client?
-      p 1
-      can :read, Idea
-    elsif user.admin?
-      p 2
-      can :read, :all
-    elsif user.moderator?
+    if user.moderator?
       p 3
-      can :manage, Idea
+      can :manage, :all
     elsif user.newuser?
       can :read, Idea
     elsif user.idea?
